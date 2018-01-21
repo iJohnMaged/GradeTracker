@@ -4,7 +4,7 @@ The script uses a platform-independent api to push notifications to user.
 It is made for students of Faculty of Engineering, Alexandria University for Ibn Elhaitham system.
 
 # Installing dependencies and usage
-Python 3 is required to run this script.
+[Python 3][1] is required to run this script.
 
 In `config.ini` you need to change `UserName` and `Password` values.
 
@@ -22,3 +22,5 @@ In `config.ini` you need to change `UserName` and `Password` values.
 ```
 
 Note: To hide the console while using the `Scheduler.py` script, change the extension to `.pyw`.
+
+[1]: https://www.python.org/downloads/
