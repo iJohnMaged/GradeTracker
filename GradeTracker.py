@@ -33,7 +33,7 @@ def compare_write_grades(json_obj, filename):
     if len(saved_grades_dict) == 0:
         write_grades(grades_dict, filename)
         notf.notify(title="Grades loaded!", message="Grades has been loaded to grades.txt!")
-        return
+        return grades_dict
 
     changed = False
     for course, grade in grades_dict.items():
@@ -85,7 +85,7 @@ def check_grades():
     login_ = data['site']['login_url']
     JCI = data['site']['jci_url']
 
-    requests.packages.urllib3.disable_warnings()
+    requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
     print("Connecting to the server and grabbing information...\n\n")
     with requests.Session() as session:
