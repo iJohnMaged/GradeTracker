@@ -77,7 +77,7 @@ def output_grades(grades):
         letter = grade if grade else 'Not available'
         print(course + ": " + letter + "\n")
 
-def check_grades():
+def check_grades(show_output = False):
     config = "config.ini"
     grades = "grades.txt"
 
@@ -98,13 +98,14 @@ def check_grades():
 
         try:
             grades_dict = compare_write_grades(r.json()['Data'], grades)
-            output_grades(grades_dict)
-            input('Press any key to exit..')
+            if show_output:
+                output_grades(grades_dict)
+                input('Press any key to exit..')
         except json.decoder.JSONDecodeError:
             print(":(")
 
 def main():
-    check_grades()
+    check_grades(show_output = True)
 
 if __name__ == "__main__":
-    check_grades()
+    main()
